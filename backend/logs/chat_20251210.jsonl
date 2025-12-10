@@ -18,3 +18,16 @@
 {"session_id": "6834742d-2ff6-49cf-959f-71adbb75a5b9", "timestamp": "2025-12-10T17:10:45.399652", "query": "\"What was Amazon revenue 2023\" \"Financial query\"", "agent": "financial", "response_length": 406}
 {"session_id": "03ac45ec-3939-49b7-9be0-f355cc2a8500", "timestamp": "2025-12-10T17:11:24.255596", "query": "hi", "agent": "financial", "response_length": 87}
 {"session_id": "3ed15fa6-b4e1-4c5f-8c15-9951861aaf0c", "timestamp": "2025-12-10T17:12:05.110586", "query": "hi", "agent": "financial", "response_length": 87}
+{"session_id": "73f9c316-c977-485e-b8ad-7015b10b1d35", "timestamp": "2025-12-10T21:42:32.322613", "query": "hi", "agent": "financial", "response_length": 87}
+{"session_id": "e57e6fbe-9238-4efc-85a9-b8a7665ebbb1", "timestamp": "2025-12-10T21:43:17.142151", "query": "hello", "agent": "financial", "response_length": 87}
+{"session_id": "0f97f950-43ad-4bf3-954d-69d7dde4d46d", "timestamp": "2025-12-10T21:44:55.285628", "query": "hi", "agent": "financial", "response_length": 87}
+{"session_id": "a6be4a29-c93d-49fc-8717-afc7d725a0bc", "timestamp": "2025-12-10T21:45:08.608742", "query": "hi", "agent": "financial", "response_length": 87}
+{"session_id": "784506da-5446-410d-8674-ed7603586a70", "timestamp": "2025-12-10T21:45:10.015301", "query": "hi", "agent": "financial", "response_length": 87}
+{"session_id": "cef3c959-6a1d-43f7-add2-470d0fd9a802", "timestamp": "2025-12-10T21:45:15.341013", "query": "hi", "agent": "financial", "response_length": 87}
+{"session_id": "2263be77-b062-4582-a0bd-118a1789c6c2", "timestamp": "2025-12-10T21:48:37.531969", "query": "show me apple's net income", "agent": "financial", "response_length": 478}
+{"session_id": "147752ed-5a0a-4929-bc31-fa576a0241ba", "timestamp": "2025-12-10T21:50:59.930897", "query": "show me apples net income on 2023", "agent": "financial", "response_length": 530}
+{"session_id": "ee6a3e27-227e-426c-86a5-ab8323bb5435", "timestamp": "2025-12-10T21:54:39.379431", "query": "show me apples net income for 2022", "agent": "financial", "response_length": 613}
+{"session_id": "773f9c06-03b6-4a57-ad2c-a06225a71f47", "timestamp": "2025-12-10T22:11:46.283936", "query": "show me apples net income for 2022\n", "agent": "financial", "response_length": 457}
+{"session_id": "05bb65c2-ae99-465f-a4ca-d302a8f72a75", "timestamp": "2025-12-10T22:54:52.352674", "query": "hi", "agent": "financial", "response_length": 87}
+{"session_id": "62805d97-9bc7-4601-b4eb-09f94ec1d71b", "timestamp": "2025-12-10T22:54:52.347761", "query": "hi", "agent": "financial", "response_length": 87}
+{"session_id": "08b10673-9a88-4367-b492-2844dbd35af2", "timestamp": "2025-12-10T23:30:31.309747", "query": "hi", "agent": null, "response_length": 36}

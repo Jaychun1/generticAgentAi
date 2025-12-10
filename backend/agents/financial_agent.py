@@ -280,23 +280,3 @@ class MinimalFinancialAgent(FinancialAgent):
         kwargs['use_minimal'] = True
         super().__init__(**kwargs)
 
-
-# Test the agent
-if __name__ == "__main__":
-    # Test minimal mode
-    print("=== Testing Minimal Mode ===")
-    minimal_agent = FinancialAgent(use_minimal=True)
-    print("Simple query:", minimal_agent.invoke("hi"))
-    print("Financial query:", minimal_agent.invoke("What is revenue?"))
-    
-    # Test RAG mode (requires services)
-    print("\n=== Testing RAG Mode ===")
-    try:
-        rag_agent = FinancialAgent(use_minimal=False)
-        print("Simple query in RAG:", rag_agent.invoke("hello"))
-        print("Document query:", rag_agent.invoke("tell me about revenue"))
-    except Exception as e:
-        print(f"RAG mode test failed: {e}")
-        print("Falling back to minimal mode...")
-        rag_agent.switch_mode(True)
-        print("Fallback response:", rag_agent.invoke("tell me about revenue"))

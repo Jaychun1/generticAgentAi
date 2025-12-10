@@ -116,11 +116,30 @@ def route_node(state: MainAgentState):
     
     return {"next_node": decision.agent}
 
-def route_query(query: str) -> str:
-    """Route a query to appropriate agent (standalone function)"""
-    llm_structured = llm.with_structured_output(RouterDecision)
-    decision = llm_structured.invoke(query)
-    return decision.agent
+def route_query(message: str) -> str:
+    """
+    Route user query to appropriate agent
+    Returns: "financial", "sql", "web", or "general"
+    """
+    message_lower = message.lower()
+    
+    # Financial keywords
+    financial_keywords = [
+        "stock", "price", "market", "investment", "portfolio",
+        "finance", "financial", "revenue", "profit", "loss",
+        "dividend", "trading", "buy", "sell", "hold", "analysis"
+    ]
+    
+    # Check for agent-specific keywords
+    if any(keyword in message_lower for keyword in financial_keywords):
+        return "financial"
+    # elif any(keyword in message_lower for keyword in sql_keywords):
+    #     return "sql"
+    # elif any(keyword in message_lower for keyword in web_keywords):
+    #     return "web"
+    else:
+        # Default to general LLM
+        return "general"  
 
 def financial_agent_node(state: MainAgentState):
     """Handle financial document queries"""
@@ -517,3 +536,4 @@ def should_retrieve_documents(query: str) -> bool:
     
     # Default: don't retrieve để tránh loop
     return False
+

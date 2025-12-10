@@ -167,3 +167,40 @@ def show_chat_page():
     if 'quick_query' in st.session_state:
         user_input = st.session_state.pop('quick_query')
         st.chat_input(user_input, key="quick_query_input")
+
+def chat_with_polling(self, message: str, session_id: str = None, agent_type: str = None, poll_interval: int = 2):
+    """Sử dụng polling để tránh timeout"""
+    import time
+    
+    # 1. Gửi request bắt đầu xử lý
+    start_response = self.session.post(
+        f"{Config.CHAT_ENDPOINT}start",
+        json={
+            "message": message,
+            "session_id": session_id,
+            "agent_type": agent_type
+        },
+        timeout=10  # Timeout ngắn cho request khởi tạo
+    )
+    
+    task_id = start_response.json().get("task_id")
+    
+    # 2. Poll cho đến khi hoàn thành
+    max_polls = 300  # Tối đa 10 phút (300 * 2s)
+    for i in range(max_polls):
+        time.sleep(poll_interval)
+        
+        status_response = self.session.get(
+            f"{Config.CHAT_ENDPOINT}tasks/{task_id}",
+            timeout=5
+        )
+        
+        status = status_response.json()
+        
+        if status.get("status") == "completed":
+            return status.get("result")
+        elif status.get("status") == "failed":
+            return {"error": status.get("error")}
+        # else: continue polling
+    
+    return {"error": "Timeout after polling"}

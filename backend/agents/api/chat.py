@@ -5,6 +5,8 @@ import uuid
 from datetime import datetime
 import json
 
+from agents.llm_agent import get_llm_agent
+
 router = APIRouter()
 
 # Initialize agents lazily
@@ -66,14 +68,15 @@ async def chat(request: ChatRequest, background_tasks: BackgroundTasks):
         # Select agent
         if agent_name == "financial":
             agent = get_financial_agent()
-        elif agent_name == "sql":
-            agent = get_sql_agent()
-        elif agent_name == "web":
-            agent = get_web_agent()
+        # elif agent_name == "sql":
+        #     agent = get_sql_agent()
+        # elif agent_name == "web":
+        #     agent = get_web_agent()
         else:
             # Default to financial
-            agent = get_financial_agent()
-            agent_name = "financial"
+            agent = get_llm_agent()     
+            agent_name = "llm"
+        
         
         # Create or get session
         if not request.session_id or request.session_id not in sessions:
@@ -81,7 +84,7 @@ async def chat(request: ChatRequest, background_tasks: BackgroundTasks):
             sessions[session_id] = {
                 "history": [],
                 "created_at": datetime.now().isoformat(),
-                "agent_counts": {"financial": 0, "sql": 0, "web": 0}
+                "agent_counts": {"financial": 0, "llm": 0, "simple": 0}  
             }
         else:
             session_id = request.session_id
@@ -159,3 +162,4 @@ def log_interaction(session_id: str, query: str, result: Dict[str, Any]):
     log_file = f"logs/chat_{datetime.now().strftime('%Y%m%d')}.jsonl"
     with open(log_file, "a", encoding="utf-8") as f:
         f.write(json.dumps(log_entry) + "\n")
+

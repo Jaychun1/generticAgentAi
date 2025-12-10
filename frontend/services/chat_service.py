@@ -273,7 +273,7 @@ class ChatService:
         """Analyze query to suggest best agent"""
         query_lower = query.lower()
 
-        financial_keywords = ['Financial query', 'Simple query']
+        financial_keywords = ['financial', 'simple','llm']
         # sql_keywords = ['employee', 'salary', 'department', 'database', 'query', 'table', 'select']
         # web_keywords = ['latest', 'news', 'current', 'today', 'update', 'search']
 

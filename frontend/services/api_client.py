@@ -18,11 +18,33 @@ class APIClient:
     def __init__(self, base_url: str = None):
         self.base_url = base_url or Config.BACKEND_URL
         self.session = requests.Session()
+        
+        # Thêm adapter với timeout và retry
+        from requests.adapters import HTTPAdapter
+        from urllib3.util.retry import Retry
+        
+        retry_strategy = Retry(
+            total=2,  # Chỉ retry 2 lần
+            backoff_factor=0.5,  # Đợi 0.5, 1 giây
+            status_forcelist=[429, 500, 502, 503, 504],
+            allowed_methods=["POST", "GET"]
+        )
+        
+        adapter = HTTPAdapter(
+            max_retries=retry_strategy,
+            pool_connections=10,
+            pool_maxsize=10
+        )
+        
+        self.session.mount("http://", adapter)
+        self.session.mount("https://", adapter)
+        
         self.session.headers.update({
             "Content-Type": "application/json",
-            "User-Agent": f"MultiAgentAI/{Config.APP_VERSION}"
+            "User-Agent": f"MultiAgentAI/{Config.APP_VERSION}",
+            "X-Request-Timeout": str(Config.API_TIMEOUT)
         })
-
+    
     @staticmethod
     def _handle_request(func):
         """Decorator to handle API requests with error handling"""
@@ -43,18 +65,24 @@ class APIClient:
             except Exception as e:
                 return {"error": f"Unexpected error: {str(e)}"}
         return wrapper
-    
+
     @_handle_request
-    def chat(self, message: str, session_id: str = None, agent_type: str = None) -> Dict[str, Any]:
-        """Send chat message"""
+    def chat(self, message: str, session_id: str = None, agent_type: str = None, timeout: int = None) -> Dict[str, Any]:
+        """Send chat message với timeout tuỳ chỉnh"""
         url = f"{Config.CHAT_ENDPOINT}"
         payload = {
             "message": message,
             "session_id": session_id,
             "agent_type": agent_type
         }
-        return self.session.post(url, json=payload, timeout=Config.API_TIMEOUT)
-    
+        return self.session.post(
+            url, 
+            json=payload, 
+            timeout=timeout or Config.API_TIMEOUT,
+            # Thêm stream=False để không chờ toàn bộ
+            stream=False
+        )
+     
     @_handle_request
     def chat_direct(self, agent_type: str, message: str, session_id: str = None) -> Dict[str, Any]:
         """Chat directly with specific agent"""
@@ -176,5 +204,32 @@ class APIClient:
         except:
             return False
 
-# Singleton instance
+    def chat_with_progress_callback(self, message: str, callback=None, **kwargs):
+        """Chat với callback progress"""
+        
+        def wrapped_request():
+            response = self.session.post(
+                f"{Config.CHAT_ENDPOINT}",
+                json={"message": message, **kwargs},
+                timeout=Config.API_TIMEOUT,
+                stream=True  # Enable streaming
+            )
+            
+            # Process stream
+            for chunk in response.iter_content(chunk_size=1024):
+                if chunk:
+                    try:
+                        progress = json.loads(chunk.decode())
+                        if callback:
+                            callback(progress)
+                    except:
+                        pass
+            
+            return response.json()
+        
+        import threading
+        thread = threading.Thread(target=wrapped_request)
+        thread.start()
+        return thread
+
 api_client = APIClient()

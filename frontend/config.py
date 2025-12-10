@@ -34,8 +34,8 @@ class Config:
     AGENTS = {
         "auto": {"name": "Auto", "icon": "", "description": "Auto-route to best agent"},
         "financial": {"name": "Financial", "icon": "", "description": "Financial document analysis"},
-        "sql": {"name": "SQL", "icon": "", "description": "Database queries"},
-        "web": {"name": "Web", "icon": "", "description": "Web search"}
+        # "sql": {"name": "SQL", "icon": "", "description": "Database queries"},
+        # "web": {"name": "Web", "icon": "", "description": "Web search"}
     }
     
     # Colors
@@ -54,8 +54,12 @@ class Config:
     """
     
     # Timeout settings
-    API_TIMEOUT = 30
-    STREAM_TIMEOUT = 60
+    API_TIMEOUT = 300  # 5 phút
+    STREAM_TIMEOUT = 3600  # 1 giờ cho stream
+    
+    # Backend URL
+    BACKEND_URL = "http://localhost:8000/api/v1"
+    CHAT_ENDPOINT = f"{BACKEND_URL}/chat/"
     
     @classmethod
     def validate_config(cls):

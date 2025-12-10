@@ -4,10 +4,13 @@ pydantic
 python-multipart
 aiofiles
 python-dotenv
+
 langgraph
 langchain
 langchain-ollama
 langchain-community
+langchain-chroma
+
 chromadb
 rank-bm25
 duckduckgo-search
@@ -19,3 +22,4 @@ python-jose[cryptography]
 passlib[bcrypt]
 
 pypdf
+ddgs
