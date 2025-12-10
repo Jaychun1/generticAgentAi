@@ -1,0 +1,150 @@
+.stApp {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-attachment: fixed;
+}
+
+/* Header styles */
+.main-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Card styles */
+.custom-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #1E3A8A;
+}
+
+/* Chat message styles */
+.user-message {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px 15px 0 15px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    max-width: 80%;
+    margin-left: auto;
+}
+
+.bot-message {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 15px 15px 15px 0;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    max-width: 80%;
+    margin-right: auto;
+}
+
+/* Button styles */
+.custom-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.custom-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Badge styles */
+.agent-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin: 0.25rem;
+}
+
+.badge-financial {
+    background: #D1FAE5;
+    color: #065F46;
+}
+
+.badge-sql {
+    background: #DBEAFE;
+    color: #1E40AF;
+}
+
+.badge-web {
+    background: #FEF3C7;
+    color: #92400E;
+}
+
+/* Input styles */
+.custom-input {
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 0.75rem;
+    transition: border-color 0.3s ease;
+}
+
+.custom-input:focus {
+    border-color: #667eea;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Table styles */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.custom-table th {
+    background: #f8fafc;
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.custom-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.custom-table tr:hover {
+    background: #f8fafc;
+}
+
+/* Loading animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.loading-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .main-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .user-message,
+    .bot-message {
+        max-width: 90%;
+    }
+}

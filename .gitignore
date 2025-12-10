@@ -1,0 +1,19 @@
+# Byte-compiled / optimized / DLL files
+__pycache__
+*.py[cod]
+*.pyo
+
+# Virtualenv
+venv/
+.env/
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# PyInstaller
+build/
+dist/
+*.spec

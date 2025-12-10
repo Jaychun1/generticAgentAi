@@ -1,0 +1,20 @@
+{"session_id": "ecc5bb4e-0738-445a-853e-70f8e6e4540a", "timestamp": "2025-12-10T02:58:23.763447", "query": "hi", "agent": "financial", "response_length": 57}
+{"session_id": "f6bf854b-964e-4b45-9614-b84d953c6c5a", "timestamp": "2025-12-10T15:04:19.592960", "query": "hi", "agent": "financial", "response_length": 57}
+{"session_id": "ad321bb8-ac53-4016-8bd8-6163966c3e98", "timestamp": "2025-12-10T15:06:45.283242", "query": "hi", "agent": "financial", "response_length": 57}
+{"session_id": "7f0721e2-51e6-4672-ba4f-52463f1422af", "timestamp": "2025-12-10T15:07:14.393710", "query": "hi", "agent": "financial", "response_length": 57}
+{"session_id": "6b841a66-904d-47be-afaa-5329476802e5", "timestamp": "2025-12-10T15:10:28.999179", "query": "hi", "agent": "financial", "response_length": 57}
+{"session_id": "a40b3d71-50ea-4ec2-a131-4289cde308f2", "timestamp": "2025-12-10T15:27:19.008511", "query": "hi", "agent": "financial", "response_length": 57}
+{"session_id": "89549fad-3db7-4658-8930-be519ffa2f40", "timestamp": "2025-12-10T15:28:47.223236", "query": "hi", "agent": "financial", "response_length": 57}
+{"session_id": "1bd48319-abd5-4d7d-8b13-05930b65123b", "timestamp": "2025-12-10T15:47:47.082621", "query": "hi", "agent": "financial", "response_length": 57}
+{"session_id": "a1db70ff-3eb9-46f2-842f-efdcf3a89615", "timestamp": "2025-12-10T15:48:30.439466", "query": "hi", "agent": "financial", "response_length": 57}
+{"session_id": "5065e3b4-1f4c-4e0c-9945-323779669bb4", "timestamp": "2025-12-10T16:33:17.180351", "query": "hi", "agent": "financial", "response_length": 87}
+{"session_id": "f354a7f4-19f2-4a55-bd86-41b894dce6a2", "timestamp": "2025-12-10T16:33:50.863922", "query": "hi", "agent": "financial", "response_length": 87}
+{"session_id": "12854db6-6b88-4696-aec6-2b346eed89ea", "timestamp": "2025-12-10T16:44:23.559380", "query": "hi", "agent": "financial", "response_length": 87}
+{"session_id": "ff2443b8-944c-4308-a59f-834383363278", "timestamp": "2025-12-10T16:45:41.435825", "query": "hi", "agent": "financial", "response_length": 87}
+{"session_id": "a50b4f3a-f55d-42a9-87e8-276eae08cc39", "timestamp": "2025-12-10T16:49:01.138454", "query": "tell me something your document", "agent": "financial", "response_length": 128}
+{"session_id": "b0a7642e-f6b2-4c24-aad9-77f02f0de5b6", "timestamp": "2025-12-10T16:53:42.954858", "query": "what was amazons's revenue in q4 2023", "agent": "financial", "response_length": 579}
+{"session_id": "43b9a8ab-19e2-4a6f-8058-59f62a3e55cb", "timestamp": "2025-12-10T16:54:42.227924", "query": "HI", "agent": "financial", "response_length": 87}
+{"session_id": "2024434e-4079-4ef5-a60e-9fdfbfdb2eda", "timestamp": "2025-12-10T17:04:54.694074", "query": "What was Amazon revenue 2023", "agent": "financial", "response_length": 505}
+{"session_id": "6834742d-2ff6-49cf-959f-71adbb75a5b9", "timestamp": "2025-12-10T17:10:45.399652", "query": "\"What was Amazon revenue 2023\" \"Financial query\"", "agent": "financial", "response_length": 406}
+{"session_id": "03ac45ec-3939-49b7-9be0-f355cc2a8500", "timestamp": "2025-12-10T17:11:24.255596", "query": "hi", "agent": "financial", "response_length": 87}
+{"session_id": "3ed15fa6-b4e1-4c5f-8c15-9951861aaf0c", "timestamp": "2025-12-10T17:12:05.110586", "query": "hi", "agent": "financial", "response_length": 87}
