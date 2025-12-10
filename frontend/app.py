@@ -35,6 +35,7 @@ def init_session_state():
         'current_session_id': None, 
         'chat_history': [],
         'chat_messages': [],
+        'chat_debug':[],
         'agent_mode': 'auto',
         'uploaded_documents': [],
         'query_input': '',
